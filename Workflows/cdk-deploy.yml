@@ -1,0 +1,21 @@
+name: Deploy CDK Infrastructure
+on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_CDK_ROLE_ARN }}
+          aws-region: us-east-1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          npm install -g aws-cdk
+          pip install -r infra/requirements.txt
+          cd infra && cdk deploy --require-approval never
