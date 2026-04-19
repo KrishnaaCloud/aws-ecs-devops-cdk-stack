@@ -1,6 +1,9 @@
 # Complete DevOps & Architecture Diagram
+
 This document contains a comprehensive visual overview of the entire deployment pipeline and the final AWS ECS architecture we have built together for the Global PRS API.
+
 ## Deployment Pipeline Architecture
+
 ```mermaid
 graph TD
     %% Define Styles
@@ -9,8 +12,8 @@ graph TD
     classDef ec2 fill:#e67e22,stroke:#d35400,stroke-width:2px,color:#fff
     
     %% Entities
-    DEV["👩‍💻 Developer (Writes App Code)"]
-    DEVOPS["🛠️ DevOps (Writes CDK Code)"]
+    DEV["Developer (Writes App Code)"]
+    DEVOPS["DevOps (Writes CDK Code)"]
     
     %% Github Systems
     subgraph GITHUB [GitHub DevOps Repository]
@@ -72,13 +75,16 @@ graph TD
     ECS -.->|"Fetch Passwords"| SECRETS
     EC2 -->|"Hosts"| ECS
 ```
+
 ## How It Works (The 2 Pipelines)
+
 ### 1. The Infrastructure Flow (Right Side Flow)
 1. You make a change to the CDK code on your laptop (e.g., resizing to a larger EC2 instance).
 2. You run `git push` to upload the code to GitHub.
 3. GitHub Actions triggers `cdk-deploy.yml`.
 4. It secretly logs into AWS without passwords using the `OIDC` trust relationship.
 5. It runs `cdk deploy` safely on AWS CloudFormation to update your subnets, ASG, Load Balancer, or Security Groups in the background.
+
 ### 2. The Application Flow (Left Side Flow)
 1. The developer writes code for the actual Python API and commits it.
 2. GitHub Actions triggers `continuous-integration.yml` to build the Docker Image.
