@@ -84,7 +84,7 @@ graph TD
 ### 1. The Infrastructure Flow (Right Side Flow)
 1. You make a change to the CDK code on your laptop (e.g., resizing to a larger EC2 instance).
 2. You run `git push` to upload the code to GitHub.
-3. GitHub Actions triggers `cdk-deploy.yml`.
+3. GitHub Actions triggers `cdk-deploy.yml`.[cdk-deploy.ym](cdk-deploy.ym)
 4. It secretly logs into AWS without passwords using the `OIDC` trust relationship.
 5. It runs `cdk deploy` safely on AWS CloudFormation to update your subnets, ASG, Load Balancer, or Security Groups in the background.
 
