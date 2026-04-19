@@ -1,4 +1,4 @@
-# Complete DevOps & Architecture Diagram
+# Automated AWS ECS Infrastructure & CI/CD Pipeline
 
 This document contains a comprehensive visual overview of the entire deployment pipeline and the final AWS ECS architecture we have built together for the Global PRS API.
 
