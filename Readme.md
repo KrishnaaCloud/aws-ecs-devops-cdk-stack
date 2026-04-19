@@ -90,8 +90,8 @@ graph TD
 
 ### 2. The Application Flow (Left Side Flow)
 1. The developer writes code for the actual Python API and commits it.
-2. GitHub Actions triggers `continuous-integration.yml` to build the Docker Image.
+2. GitHub Actions triggers [`continuous-integration.yml`](https://github.com/KrishnaaCloud/aws-ecs-devops-cdk-stack/blob/6a6fa3266b77bd055b856e673533cfa62e38976b/Workflows/ci.yml) to build the Docker Image.
 3. The image is saved in AWS ECR.
-4. The pipeline triggers `continuous-deployment.yml`, which talks strictly to the ECS Service.
+4. The pipeline triggers [`continuous-deployment.yml`](https://github.com/KrishnaaCloud/aws-ecs-devops-cdk-stack/blob/6a6fa3266b77bd055b856e673533cfa62e38976b/Workflows/cd.yml), which talks strictly to the ECS Service.
 5. ECS gracefully restarts the 4 existing tasks using the Zero-Downtime strategy to pull down the newly updated image.
 6. When the new tasks start up, they dynamically pull the database passwords seamlessly out of AWS Secrets Manager using the `ecs-user` IAM Access Keys we secretly injected into the Task Definition environment!
