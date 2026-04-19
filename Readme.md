@@ -2,10 +2,8 @@
 
 This document contains a comprehensive visual overview of the entire deployment pipeline and the final AWS ECS architecture we have built together for the Global PRS API.
 
-# Global PRS Infrastructure & CI/CD Pipelines
-![Infrastructure CI/CD](https://github.com/IshaFoundationIT/prod-globalprs-api-devops/actions/workflows/cdk-deploy.yml/badge.svg)
-![Application CI](https://github.com/IshaFoundationIT/prod-globalprs-api-devops/actions/workflows/continuous-integration.yml/badge.svg)
-![Application CD](https://github.com/IshaFoundationIT/prod-globalprs-api-devops/actions/workflows/continuous-deployment.yml/badge.svg)
+> [!NOTE]
+> All resource names, account IDs, and specific naming conventions have been anonymized in this repository for security and privacy reasons while maintaining the functional architecture.
 
 ## Deployment Pipeline Architecture
 
