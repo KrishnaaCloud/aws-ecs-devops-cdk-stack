@@ -5,6 +5,8 @@ This document contains a comprehensive visual overview of the entire deployment 
 > [!NOTE]
 > All resource names, account IDs, and specific naming conventions have been anonymized in this repository for security and privacy reasons while maintaining the functional architecture.
 
+![ECS DevOps Architecture](./workflow/ecs_devops_architecture.svg)
+
 ## Deployment Pipeline Architecture
 
 ```mermaid
